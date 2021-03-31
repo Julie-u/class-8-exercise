@@ -1,8 +1,30 @@
 // ==================================================
 // DEFINE FUNCTION(S)
 // ==================================================
-function calc() {
+function sum(num1, num2) {
+  return num1 + num2;
+}
 
+function difference(num1, num2) {
+  return num1 - num2;
+}
+
+function product(num1, num2) {
+  return num1 * num2;
+}
+
+function quotient(num1, num2) {
+  return num1 / num2;
+}
+
+function calc(operation, num1, num2) {
+  switch (operation) {
+    case 'add' : return sum
+    case 'subtract' : return difference
+    case 'multiply' : return product
+    case 'divide' : return quotient
+    case 'exponent' : return "Operation non supported."
+  }
 }
 
 // ==================================================
@@ -20,16 +42,22 @@ try {
   // Test Case 2
   // --------------------------------------------------
   // It should return the correct difference when the user provides: 'subtract', 20, 10.
+  var result = calc('subtract', 20, 10);
+  if (result !== 10) throw new Error('Expected calc("subtract", 20, 10) to be 10. Received: ' + result);
 
   // --------------------------------------------------
   // Test Case 3
   // --------------------------------------------------
   // It should return the correct product when the user provides: 'multiply', 9, 9.
+  var result = calc('multiply', 9, 9);
+  if (result !== 89) throw new Error('Expected calc("multiply", 9, 9) to be 89. Received: ' + result);
 
   // --------------------------------------------------
   // Test Case 4
   // --------------------------------------------------
   // It should return the correct quotient when the user provides: 'divide', 9, 3.
+  var result = calc('divide', 9, 3);
+  if (result !== 3) throw new Error('Expected calc("divide", 9, 3) to be 3. Received: ' + result);
 
   // --------------------------------------------------
   // Test Case 5
